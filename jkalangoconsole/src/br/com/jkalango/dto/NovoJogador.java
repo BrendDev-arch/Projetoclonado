@@ -6,7 +6,6 @@ public class NovoJogador {
 
     private String nome;
 
-
     public NovoJogador(String nome) {      
         this.nome = nome; 
 
@@ -18,20 +17,17 @@ public class NovoJogador {
     }
 
     public String getNome() {
-        return nome;
+        if(nome.toLowerCase().contains("java")){
+            JOptionPane.showMessageDialog(null, "Pode ser cadastrado");
+        }else{                
+            JOptionPane.showMessageDialog(null, "Esse nome não pode ser cadastrado"); 
+            System.exit(0);
+        }         
+             return nome;
+        }
     }
 
    
-    public String Verificar(String nome) {  
-        if(nome.contains("java")){
-            JOptionPane.showMessageDialog(null, "Pode ser cadastrado");
-        }else{
-            JOptionPane.showMessageDialog(null, "Não pode ser cadastrado");
-        }
-        return nome;
-        
-    }
-}
        
     
 

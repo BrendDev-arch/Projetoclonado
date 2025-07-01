@@ -31,6 +31,7 @@ public class JCadastroJogador extends JFrame{
        //'JPasswordField
        add(lblNome);
        add(txtNome);
+       
        JButton btnCadastrar = new JButton("Cadastrar");
        add(btnCadastrar);
 
@@ -44,11 +45,9 @@ public class JCadastroJogador extends JFrame{
             if (valor.isEmpty()) {
                 JOptionPane.showMessageDialog(null,"O campo não pode ser vazio ou nulo");
             }else{
-                JOptionPane.showMessageDialog(null,"Jogador cadastrado com sucesso!");
+                JOptionPane.showMessageDialog(null, "O nome cadastrado com java é: " + jogador.getNome());
             }
-        
         }
-
         
        });
        setVisible(true);
