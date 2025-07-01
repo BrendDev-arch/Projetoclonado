@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import br.com.jkalango.dto.NovoJogador;
+
 import javax.swing.JButton;
 
 //extends é herança
@@ -29,14 +32,23 @@ public class JCadastroJogador extends JFrame{
        add(lblNome);
        add(txtNome);
        JButton btnCadastrar = new JButton("Cadastrar");
+       add(btnCadastrar);
+
        btnCadastrar.addActionListener(new ActionListener(){
 
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO Auto-generated method stub
-            JOptionPane.showMessageDialog(null,"Jogador cadastrado com sucesso!");        
+            String valor = txtNome.getText().trim();
+            NovoJogador jogador = new NovoJogador(valor);
+            if (valor.isEmpty()) {
+                JOptionPane.showMessageDialog(null,"O campo não pode ser vazio ou nulo");
+            }else{
+                JOptionPane.showMessageDialog(null,"Jogador cadastrado com sucesso!");
+            }
         
         }
+
         
        });
        setVisible(true);
